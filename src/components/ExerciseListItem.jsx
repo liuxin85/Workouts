@@ -5,7 +5,8 @@ function ExerciesListItem({ item }) {
     <View style={styles.exerciseContainer}>
       <Text style={styles.exerciseName}>{item.name}</Text>
       <Text style={styles.exerciseSubtitle}>
-        {item.muscle?.toUpperCase()} | {item.equipment}
+        <Text style={styles.subValue}>{item.muscle}</Text> |{' '}
+        <Text style={styles.subValue}>{item.equipment}</Text>
       </Text>
     </View>
   );
@@ -25,4 +26,8 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   exerciseSubtitle: { color: 'dimgray' },
+
+  subValue: {
+    textTransform: 'capitalize',
+  },
 });
