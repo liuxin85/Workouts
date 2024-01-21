@@ -1,0 +1,25 @@
+type InsertSetResponse {
+  insertedId: String
+}
+
+scalar Inputdocument
+
+type Mutation {
+  myQuery(
+    collection: String
+    dataSource: String
+    database: String
+    document: Inputdocument
+  ): InsertSetResponse
+    @rest(
+      method: POST
+      endpoint: "https://ap-southeast-1.aws.data.mongodb-api.com/app/data-wfjtj/endpoint/data/v1/action/insertOne"
+      headers: [
+        { name: "accept", value: "application/json" }
+        {
+          name: "apikey"
+          value: "Re8s8HTJr6f0Zt7rKgPeRnEWBvtKhrH4GeurTFSvYzAalQetiCQUyoqv1kVpJYi2"
+        }
+      ]
+    )
+}
